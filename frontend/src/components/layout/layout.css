@@ -1,0 +1,111 @@
+/* layout.css - Main Layout & Navbar */
+
+.layout-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-main {
+  flex: 1;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+@media (min-width: 640px) {
+  .layout-main {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.layout-footer {
+  border-top: 1px solid var(--border-color);
+  padding: 24px 0;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  background: var(--surface-color);
+}
+
+/* Navbar */
+.navbar-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+}
+
+.navbar-container {
+  margin: 0 auto;
+  display: flex;
+  height: 64px;
+  max-width: 1024px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+@media (min-width: 640px) {
+  .navbar-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s;
+}
+.navbar-brand:hover {
+  opacity: 0.8;
+}
+
+.navbar-logo {
+  display: flex;
+  height: 32px;
+  width: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background-color: var(--primary-color);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.navbar-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+.nav-link:hover, .nav-link-active {
+  color: var(--primary-color);
+}
+
+/* Utilities for responsive buttons */
+.desktop-only { display: none !important; }
+.mobile-only { display: inline-flex !important; }
+@media (min-width: 640px) {
+  .desktop-only { display: inline-flex !important; }
+  .mobile-only { display: none !important; }
+}
